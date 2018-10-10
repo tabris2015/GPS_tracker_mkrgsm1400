@@ -1,0 +1,84 @@
+AT+CMEE=2
+AT+COPS?
+AT+CGATT?
+AT+CREG?
+AT+CGREG?
+AT+UCGOPS?
+
+activar
+AT+CGACT=1,1
+
+at
+
+18.221.56.190
+/mapacentral/api/vehiculoposition?id=34&latitud=-16.469349&longitud=-68.150574
+
+GET / HTTP/1.1
+
+GET /mapacentral/api/vehiculoposition?id=34&amp;latitud=-16.469349&amp;longitud=-68.150574 HTTP/1.1
+Host: 18.221.56.190
+Cache-Control: no-cache
+Postman-Token: c333f1b2-0f2d-5b96-1493-3b2716a67a13
+
+
+at+cmee=2
+AT+CGATT=1
+at+upsd=0,7,"0.0.0.0"
+at+upsda=0,3
+at+upsnd=0,8
+at+uping="18.221.56.190",1,32,5000,64
+
+AT+USOCR=6
+
+at+usoco=0,"18.221.56.190",80
+at+usoco=1,"18.221.56.190",80
+at+usoco=2,"18.221.56.190",80
+at+usowr=0,122,"GET /mapacentral/api/vehiculoposition?id=34&latitud=-16.469349&longitud=-68.150574 HTTP/1.1\r\nHost: 18.221.56.190\r\n\r\n"
+at+usowr=0,36,"GET  HTTP/1.1\r\nHost: 18.221.56.190"
+at+usowr=1,36,"GET  HTTP/1.1\r\nHost: 18.221.56.190"
+at+usowr=2,36,"GET  HTTP/1.1\nHost: 18.221.56.190"
+at+usowr=1,120,"GET /mapacentral/api/vehiculoposition?id=34&amp;latitud=-16.469349&amp;longitud=-68.150574 HTTP/1.1\nHost: 18.221.56.190"
+at+usord=0,343
+
+at+usowr=0,99,"GET /mapacentral/api/vehiculoposition?id=34&amp;latitud=-16.469349&amp;longitud=-68.150574 HTTP/1.1"
+
+at+usoco=0,"httpbin.org",80
+at+usoco=1,"httpbin.org",80
+at+usowr=0,37,"GET /ip HTTP/1.1\r\nHost: httpbin.org"
+at+usowr=1,32,"GET  HTTP/1.1\r\nHost: httpbin.org"
+
+
+at+usoco=0,"postman-echo.com",80
+at+usowr=0,20,"GET /?id=34 HTTP/1.1"
+
+
+http
+
+AT+UHTTP=0
+AT+UHTTP=0,1,"httpbin.org"
+AT+UHTTP=0,5,80
+AT+UDNSRN=0,"httpbin.org"
+AT+UHTTPC=0,1,"/","get.ffs"
+
+AT+UHTTP=0,0,"18.221.56.190"
+AT+UHTTP=0,5,80
+AT+UHTTPC=0,1,"/mapacentral/api/vehiculoposition?id=34&latitud=-16.469349&longitud=-68.150574","gps"
+AT+UHTTPER=0
+AT+ULSTFILE=2,"gps"
+AT+URDFILE="gps"
+
+at+cmee=2
+AT+CGATT=1
+at+upsd=0,7,"0.0.0.0"
+at+upsda=0,3
+at+upsnd=0,8
+at+uping="18.221.56.190",1,32,5000,64
+
+AT+UHTTP=0,1,"postman-echo.com"
+AT+UHTTP=0,5,80
+AT+UDNSRN=0,"postman-echo.com"
+AT+UHTTPC=0,1,"/get?foo=1","get.ffs"
+AT+UHTTPER=0
+AT+ULSTFILE=
+AT+ULSTFILE=2,"get.ffs"
+AT+URDFILE="get.ffs"

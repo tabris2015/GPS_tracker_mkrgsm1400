@@ -1,0 +1,6 @@
+{
+    "terminal.integrated.env.linux": {
+        "PATH": "/home/pepe/.platformio/penv/bin:/home/pepe/.platformio/penv:/home/pepe/bin:/home/pepe/.local/bin:/home/pepe/catkin_ws/devel/bin:/opt/ros/kinetic/bin:/home/pepe/bin:/home/pepe/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+        "PLATFORMIO_CALLER": "vscode"
+    }
+}
